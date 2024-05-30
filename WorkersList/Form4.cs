@@ -26,7 +26,7 @@ namespace EmployeeTypeA
         {
             string[] linesA = File.ReadAllLines(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesA.txt");
             string[] linesB = File.ReadAllLines(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesB.txt");
-            for (int i = 1; i < linesA.Length; i++)
+            for (int i = 0; i < linesA.Length; i++)
             {
                 string element = "";
                 string[] headers = linesA[i].Split(",");
@@ -36,7 +36,7 @@ namespace EmployeeTypeA
                 }
                 cbEmployees.Items.Add(element);
             }
-            for (int i = 1; i < linesB.Length; i++)
+            for (int i = 0; i < linesB.Length; i++)
             {
                 string element = "";
                 string[] headers = linesB[i].Split(",");
