@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnTA = new Button();
             txtbosName = new TextBox();
             txtboxLastName = new TextBox();
-            txtboxDateBirth = new TextBox();
             txtboxPhone = new TextBox();
             txtboxAdress = new TextBox();
-            txtboxDateHire = new TextBox();
             txtboxGender = new TextBox();
             txtboxHourspr = new TextBox();
             txtboxSalary = new TextBox();
@@ -42,10 +39,8 @@
             txtboxVacation = new TextBox();
             txtboxPosition = new TextBox();
             txtboxEmail = new TextBox();
-            btnTB = new Button();
             lblname = new Label();
             lblastnm = new Label();
-            lblpass = new Label();
             lblbrth = new Label();
             lblgender = new Label();
             lbladress = new Label();
@@ -60,17 +55,13 @@
             btnID = new Button();
             btnPassword = new Button();
             txtboxValidation = new TextBox();
+            groupBoxextraoption = new GroupBox();
+            btntoggleOption = new Button();
+            btnGN = new Button();
+            dtBirth = new DateTimePicker();
+            dtHire = new DateTimePicker();
+            groupBoxextraoption.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnTA
-            // 
-            btnTA.Location = new Point(536, 71);
-            btnTA.Name = "btnTA";
-            btnTA.Size = new Size(75, 23);
-            btnTA.TabIndex = 0;
-            btnTA.Text = "Type A";
-            btnTA.UseVisualStyleBackColor = true;
-            btnTA.Click += btnTA_Click;
             // 
             // txtbosName
             // 
@@ -86,13 +77,6 @@
             txtboxLastName.Size = new Size(100, 23);
             txtboxLastName.TabIndex = 2;
             // 
-            // txtboxDateBirth
-            // 
-            txtboxDateBirth.Location = new Point(224, 89);
-            txtboxDateBirth.Name = "txtboxDateBirth";
-            txtboxDateBirth.Size = new Size(100, 23);
-            txtboxDateBirth.TabIndex = 3;
-            // 
             // txtboxPhone
             // 
             txtboxPhone.Location = new Point(12, 147);
@@ -107,23 +91,16 @@
             txtboxAdress.Size = new Size(100, 23);
             txtboxAdress.TabIndex = 5;
             // 
-            // txtboxDateHire
-            // 
-            txtboxDateHire.Location = new Point(224, 147);
-            txtboxDateHire.Name = "txtboxDateHire";
-            txtboxDateHire.Size = new Size(100, 23);
-            txtboxDateHire.TabIndex = 6;
-            // 
             // txtboxGender
             // 
-            txtboxGender.Location = new Point(330, 89);
+            txtboxGender.Location = new Point(224, 89);
             txtboxGender.Name = "txtboxGender";
             txtboxGender.Size = new Size(100, 23);
             txtboxGender.TabIndex = 7;
             // 
             // txtboxHourspr
             // 
-            txtboxHourspr.Location = new Point(330, 147);
+            txtboxHourspr.Location = new Point(224, 147);
             txtboxHourspr.Name = "txtboxHourspr";
             txtboxHourspr.Size = new Size(100, 23);
             txtboxHourspr.TabIndex = 8;
@@ -137,21 +114,21 @@
             // 
             // txtboxBonus
             // 
-            txtboxBonus.Location = new Point(118, 284);
+            txtboxBonus.Location = new Point(0, 37);
             txtboxBonus.Name = "txtboxBonus";
             txtboxBonus.Size = new Size(100, 23);
             txtboxBonus.TabIndex = 10;
             // 
             // txtboxVacation
             // 
-            txtboxVacation.Location = new Point(343, 211);
+            txtboxVacation.Location = new Point(0, 110);
             txtboxVacation.Name = "txtboxVacation";
             txtboxVacation.Size = new Size(100, 23);
             txtboxVacation.TabIndex = 12;
             // 
             // txtboxPosition
             // 
-            txtboxPosition.Location = new Point(12, 284);
+            txtboxPosition.Location = new Point(157, 37);
             txtboxPosition.Name = "txtboxPosition";
             txtboxPosition.Size = new Size(100, 23);
             txtboxPosition.TabIndex = 13;
@@ -162,16 +139,6 @@
             txtboxEmail.Name = "txtboxEmail";
             txtboxEmail.Size = new Size(100, 23);
             txtboxEmail.TabIndex = 14;
-            // 
-            // btnTB
-            // 
-            btnTB.Location = new Point(681, 71);
-            btnTB.Name = "btnTB";
-            btnTB.Size = new Size(75, 23);
-            btnTB.TabIndex = 17;
-            btnTB.Text = "Type B";
-            btnTB.UseVisualStyleBackColor = true;
-            btnTB.Click += btnTB_Click;
             // 
             // lblname
             // 
@@ -191,19 +158,10 @@
             lblastnm.TabIndex = 20;
             lblastnm.Text = "Last Name";
             // 
-            // lblpass
-            // 
-            lblpass.AutoSize = true;
-            lblpass.Location = new Point(248, 193);
-            lblpass.Name = "lblpass";
-            lblpass.Size = new Size(57, 15);
-            lblpass.TabIndex = 21;
-            lblpass.Text = "Password";
-            // 
             // lblbrth
             // 
             lblbrth.AutoSize = true;
-            lblbrth.Location = new Point(248, 71);
+            lblbrth.Location = new Point(520, 71);
             lblbrth.Name = "lblbrth";
             lblbrth.Size = new Size(73, 15);
             lblbrth.TabIndex = 22;
@@ -212,7 +170,7 @@
             // lblgender
             // 
             lblgender.AutoSize = true;
-            lblgender.Location = new Point(360, 71);
+            lblgender.Location = new Point(248, 71);
             lblgender.Name = "lblgender";
             lblgender.Size = new Size(45, 15);
             lblgender.TabIndex = 23;
@@ -248,7 +206,7 @@
             // lbldth
             // 
             lbldth.AutoSize = true;
-            lbldth.Location = new Point(237, 129);
+            lbldth.Location = new Point(520, 129);
             lbldth.Name = "lbldth";
             lbldth.Size = new Size(68, 15);
             lbldth.TabIndex = 27;
@@ -257,7 +215,7 @@
             // lblhours
             // 
             lblhours.AutoSize = true;
-            lblhours.Location = new Point(330, 129);
+            lblhours.Location = new Point(225, 129);
             lblhours.Name = "lblhours";
             lblhours.Size = new Size(87, 15);
             lblhours.TabIndex = 28;
@@ -275,7 +233,7 @@
             // lblbonus
             // 
             lblbonus.AutoSize = true;
-            lblbonus.Location = new Point(144, 266);
+            lblbonus.Location = new Point(23, 19);
             lblbonus.Name = "lblbonus";
             lblbonus.Size = new Size(40, 15);
             lblbonus.TabIndex = 30;
@@ -284,7 +242,7 @@
             // vacationlbl
             // 
             vacationlbl.AutoSize = true;
-            vacationlbl.Location = new Point(354, 193);
+            vacationlbl.Location = new Point(6, 92);
             vacationlbl.Name = "vacationlbl";
             vacationlbl.Size = new Size(89, 15);
             vacationlbl.TabIndex = 31;
@@ -293,7 +251,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(38, 266);
+            label1.Location = new Point(182, 18);
             label1.Name = "label1";
             label1.Size = new Size(50, 15);
             label1.TabIndex = 32;
@@ -301,7 +259,7 @@
             // 
             // btnID
             // 
-            btnID.Location = new Point(224, 284);
+            btnID.Location = new Point(330, 88);
             btnID.Name = "btnID";
             btnID.Size = new Size(113, 23);
             btnID.TabIndex = 36;
@@ -311,34 +269,94 @@
             // 
             // btnPassword
             // 
-            btnPassword.Location = new Point(237, 211);
+            btnPassword.Location = new Point(330, 146);
             btnPassword.Name = "btnPassword";
-            btnPassword.Size = new Size(75, 23);
+            btnPassword.Size = new Size(118, 23);
             btnPassword.TabIndex = 37;
-            btnPassword.Text = "Generate";
+            btnPassword.Text = "Generate Password";
             btnPassword.UseVisualStyleBackColor = true;
             btnPassword.Click += btnPassword_Click;
             // 
             // txtboxValidation
             // 
-            txtboxValidation.Location = new Point(536, 100);
+            txtboxValidation.Location = new Point(509, 290);
             txtboxValidation.Multiline = true;
             txtboxValidation.Name = "txtboxValidation";
             txtboxValidation.ReadOnly = true;
-            txtboxValidation.Size = new Size(220, 44);
+            txtboxValidation.Size = new Size(249, 90);
             txtboxValidation.TabIndex = 38;
+            // 
+            // groupBoxextraoption
+            // 
+            groupBoxextraoption.Controls.Add(txtboxBonus);
+            groupBoxextraoption.Controls.Add(txtboxPosition);
+            groupBoxextraoption.Controls.Add(lblbonus);
+            groupBoxextraoption.Controls.Add(label1);
+            groupBoxextraoption.Controls.Add(vacationlbl);
+            groupBoxextraoption.Controls.Add(txtboxVacation);
+            groupBoxextraoption.Location = new Point(18, 251);
+            groupBoxextraoption.Name = "groupBoxextraoption";
+            groupBoxextraoption.Size = new Size(306, 177);
+            groupBoxextraoption.TabIndex = 39;
+            groupBoxextraoption.TabStop = false;
+            // 
+            // btntoggleOption
+            // 
+            btntoggleOption.Location = new Point(678, 262);
+            btntoggleOption.Name = "btntoggleOption";
+            btntoggleOption.Size = new Size(94, 23);
+            btntoggleOption.TabIndex = 40;
+            btntoggleOption.Text = "Type B";
+            btntoggleOption.UseVisualStyleBackColor = true;
+            btntoggleOption.Click += btntoggleOption_Click;
+            // 
+            // btnGN
+            // 
+            btnGN.Location = new Point(509, 262);
+            btnGN.Name = "btnGN";
+            btnGN.Size = new Size(163, 23);
+            btnGN.TabIndex = 41;
+            btnGN.Text = "Generate Employee";
+            btnGN.UseVisualStyleBackColor = true;
+            btnGN.Click += btnGN_Click;
+            // 
+            // dtBirth
+            // 
+            dtBirth.Format = DateTimePickerFormat.Short;
+            dtBirth.Location = new Point(459, 89);
+            dtBirth.MaxDate = new DateTime(2008, 6, 5, 0, 0, 0, 0);
+            dtBirth.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dtBirth.Name = "dtBirth";
+            dtBirth.Size = new Size(200, 23);
+            dtBirth.TabIndex = 42;
+            dtBirth.Value = new DateTime(2008, 6, 5, 0, 0, 0, 0);
+            dtBirth.ValueChanged += dtBirth_ValueChanged;
+            // 
+            // dtHire
+            // 
+            dtHire.Format = DateTimePickerFormat.Short;
+            dtHire.Location = new Point(459, 147);
+            dtHire.MaxDate = new DateTime(2024, 6, 5, 0, 0, 0, 0);
+            dtHire.MinDate = new DateTime(1980, 1, 1, 0, 0, 0, 0);
+            dtHire.Name = "dtHire";
+            dtHire.Size = new Size(200, 23);
+            dtHire.TabIndex = 43;
+            dtHire.Value = new DateTime(2024, 6, 5, 0, 0, 0, 0);
+            dtHire.ValueChanged += dtHire_ValueChanged;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dtHire);
+            Controls.Add(dtBirth);
+            Controls.Add(btnGN);
+            Controls.Add(btntoggleOption);
+            Controls.Add(groupBoxextraoption);
             Controls.Add(txtboxValidation);
             Controls.Add(btnPassword);
             Controls.Add(btnID);
-            Controls.Add(label1);
-            Controls.Add(vacationlbl);
-            Controls.Add(lblbonus);
             Controls.Add(lblsalary);
             Controls.Add(lblhours);
             Controls.Add(lbldth);
@@ -347,39 +365,29 @@
             Controls.Add(lbladress);
             Controls.Add(lblgender);
             Controls.Add(lblbrth);
-            Controls.Add(lblpass);
             Controls.Add(lblastnm);
             Controls.Add(lblname);
-            Controls.Add(btnTB);
             Controls.Add(txtboxEmail);
-            Controls.Add(txtboxPosition);
-            Controls.Add(txtboxVacation);
-            Controls.Add(txtboxBonus);
             Controls.Add(txtboxSalary);
             Controls.Add(txtboxHourspr);
             Controls.Add(txtboxGender);
-            Controls.Add(txtboxDateHire);
             Controls.Add(txtboxAdress);
             Controls.Add(txtboxPhone);
-            Controls.Add(txtboxDateBirth);
             Controls.Add(txtboxLastName);
             Controls.Add(txtbosName);
-            Controls.Add(btnTA);
             Name = "Form2";
             Text = "Form2";
+            groupBoxextraoption.ResumeLayout(false);
+            groupBoxextraoption.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnTA;
         private TextBox txtbosName;
         private TextBox txtboxLastName;
-        private TextBox txtboxDateBirth;
         private TextBox txtboxPhone;
         private TextBox txtboxAdress;
-        private TextBox txtboxDateHire;
         private TextBox txtboxGender;
         private TextBox txtboxHourspr;
         private TextBox txtboxSalary;
@@ -388,10 +396,8 @@
         private TextBox txtboxVacation;
         private TextBox txtboxPosition;
         private TextBox txtboxEmail;
-        private Button btnTB;
         private Label lblname;
         private Label lblastnm;
-        private Label lblpass;
         private Label lblbrth;
         private Label lblgender;
         private Label lbladress;
@@ -406,5 +412,10 @@
         private Button btnID;
         private Button btnPassword;
         private TextBox txtboxValidation;
+        private GroupBox groupBoxextraoption;
+        private Button btntoggleOption;
+        private Button btnGN;
+        private DateTimePicker dtBirth;
+        private DateTimePicker dtHire;
     }
 }

@@ -16,91 +16,70 @@ namespace WorkersList
         public Form2()
         {
             InitializeComponent();
+            this.groupBoxextraoption.Visible = false;
         }
         string idgenerate;
         int ages;
         public string[] employeesA;
         public string[] employeesB;
         bool decitionmaking;
-        
-        private void btnTA_Click(object sender, EventArgs e)
+        DateTime dtBrth;
+        DateTime dthire;
+        private void EmployeeAGN()
         {
-            
-            txtboxValidation.Text = string.Empty;
+
+
             if (string.IsNullOrWhiteSpace(idgenerate) || string.IsNullOrWhiteSpace(Generatepassword()))
             {
                 return;
             }
-            
 
-            switch (txtBoxCounter())
+            txtboxValidation.Text = "Employee succesufuly added";
+
+            try
             {
-                case 4:
-                    txtboxValidation.Text = "Employee succesufuly added";
+                getAge(dtBrth);
+                EmployeeA employeeA = new EmployeeA(txtbosName.Text, txtboxLastName.Text, idgenerate, dtBrth, ages, txtboxGender.Text, txtboxAdress.Text, txtboxPhone.Text, txtboxEmail.Text, Generatepassword(), dthire, Convert.ToDouble(txtboxSalary.Text), Convert.ToDouble(txtboxHourspr.Text));
+                employeesA = new string[] { employeeA.Name, employeeA.Lastname, employeeA.employeeID, employeeA.DateofBirth.ToString("dd-MM-yyyy"), employeeA.Age.ToString(), employeeA.Gender, employeeA.Adress, employeeA.Phonenumber.ToString(), employeeA.Email, employeeA.Dateofhire.ToString("dd-MM-yyyy"), employeeA.salary.ToString(), employeeA.Hoursperweek.ToString() };
 
-                    try
-                    {
-                        getAge(Convert.ToDateTime(txtboxDateBirth.Text));
-                        EmployeeA employeeA = new EmployeeA(txtbosName.Text, txtboxLastName.Text, idgenerate, Convert.ToDateTime(txtboxDateBirth.Text), ages, txtboxGender.Text, txtboxAdress.Text, txtboxPhone.Text, txtboxEmail.Text, Generatepassword(), Convert.ToDateTime(txtboxDateHire.Text), Convert.ToDouble(txtboxSalary.Text), Convert.ToDouble(txtboxHourspr.Text));                        
-                        employeesA = new string[] { employeeA.Name, employeeA.Lastname, employeeA.employeeID, employeeA.DateofBirth.ToString("dd-MM-yyyy"), employeeA.Age.ToString(), employeeA.Gender, employeeA.Adress, employeeA.Phonenumber.ToString(), employeeA.Email,employeeA.Dateofhire.ToString("dd-MM-yyyy"), employeeA.salary.ToString(), employeeA.Hoursperweek.ToString() };
-                       
-                        WriteTextToFile(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesA.txt", employeesA);
-                    }
-                    catch (Exception ex)
-                    {
-                        txtboxValidation.Text = ex.Message;
-
-                    }
-
-                    break;
-                case > 4:
-                    txtboxValidation.Text = "Missing Information";
-                    break;
-                case < 4:
-                    txtboxValidation.Text = "Too much Information for a Type A employee";
-                    break;
+                WriteTextToFile(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesA.txt", employeesA);
             }
+            catch (Exception ex)
+            {
+                txtboxValidation.Text = ex.Message;
+
+            }
+
 
         }
-        private void btnTB_Click(object sender, EventArgs e)
+        private void EmployeeBGN()
         {
-            txtboxValidation.Text = string.Empty;
+
             if (string.IsNullOrWhiteSpace(idgenerate) || string.IsNullOrWhiteSpace(Generatepassword()))
             {
                 return;
             }
-            Decisionmaking();
 
-            switch (txtBoxCounter())
+            txtboxValidation.Text = "Employee succesufuly added";
+            try
             {
-                case 1:
+                getAge(dtBrth);
+                EmployeeB employeeB = new EmployeeB(txtbosName.Text, txtboxLastName.Text, idgenerate, dtBrth, ages, txtboxGender.Text, txtboxAdress.Text, txtboxPhone.Text, txtboxEmail.Text, Generatepassword(), dthire, Convert.ToDouble(txtboxSalary.Text), Convert.ToDouble(txtboxHourspr.Text), Convert.ToDecimal(txtboxBonus.Text), Convert.ToInt32(txtboxVacation.Text), txtboxPosition.Text, decitionmaking);
+                employeesB = new string[] { employeeB.Name, employeeB.Lastname, employeeB.employeeID, employeeB.DateofBirth.ToString("dd-MM-yyyy"), employeeB.Age.ToString(), employeeB.Gender, employeeB.Adress, employeeB.Phonenumber.ToString(), employeeB.Email, employeeB.Dateofhire.ToString("dd-MM-yyyy"), employeeB.salary.ToString(), employeeB.Hoursperweek.ToString(), employeeB.Bonus.ToString(), employeeB.Vacationdays.ToString(), employeeB.Position, employeeB.DecisionMakingAuthority.ToString() };
 
-                    txtboxValidation.Text = "Employee succesufuly added";
-                    try
-                    {
-                        getAge(Convert.ToDateTime(txtboxDateBirth.Text));
-                        EmployeeB employeeB = new EmployeeB(txtbosName.Text, txtboxLastName.Text, idgenerate, Convert.ToDateTime(txtboxDateBirth.Text).Date, ages, txtboxGender.Text, txtboxAdress.Text, txtboxPhone.Text, txtboxEmail.Text, Generatepassword(), Convert.ToDateTime(txtboxDateHire.Text).Date, Convert.ToDouble(txtboxSalary.Text), Convert.ToDouble(txtboxHourspr.Text), Convert.ToDecimal(txtboxBonus.Text), Convert.ToInt32(txtboxVacation.Text), txtboxPosition.Text, decitionmaking);
-                        employeesB = new string[] { employeeB.Name, employeeB.Lastname, employeeB.employeeID, employeeB.DateofBirth.ToString("dd-MM-yyyy"),  employeeB.Age.ToString(), employeeB.Gender, employeeB.Adress, employeeB.Phonenumber.ToString(), employeeB.Email, employeeB.Dateofhire.ToString("dd-MM-yyyy"), employeeB.salary.ToString(), employeeB.Hoursperweek.ToString(), employeeB.Bonus.ToString(), employeeB.Vacationdays.ToString(), employeeB.Position, employeeB.DecisionMakingAuthority.ToString()};
-
-                        WriteTextToFile(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesB.txt", employeesB);
-                    }
-                    catch (Exception ex)
-                    {
-                        txtboxValidation.Text = ex.StackTrace;
-
-                    }
-                    break;
-                case > 1:
-                    txtboxValidation.Text = "Missing Information";
-                    break;
+                WriteTextToFile(@"C:\Users\Roberto\source\repos\WorkersList\WorkersList\ListEmployeesB.txt", employeesB);
+            }
+            catch (Exception ex)
+            {
+                txtboxValidation.Text = ex.StackTrace;
 
             }
-
 
         }
 
         private int txtBoxCounter()
         {
+            txtboxValidation.Text = string.Empty;
             int counter = 0;
             int emptyboxcounter = 0;
 
@@ -173,7 +152,7 @@ namespace WorkersList
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
                     sw.WriteLine(linea);
-                 
+
                 }
 
             }
@@ -194,7 +173,7 @@ namespace WorkersList
                 Console.WriteLine($"Ocurrió un error: {ex.Message}");
             }
 
-           
+
 
 
         }
@@ -214,7 +193,7 @@ namespace WorkersList
                 case "Manager":
                     decitionmaking = true;
                     break;
-                    default:
+                default:
                     txtboxPosition.Text = "Position not recognized";
                     break;
                 case "Assistent Manager":
@@ -224,9 +203,49 @@ namespace WorkersList
 
         }
 
+        private void btntoggleOption_Click(object sender, EventArgs e)
+        {
+            this.groupBoxextraoption.Visible = !this.groupBoxextraoption.Visible;
+        }
 
-     
+        private void btnGN_Click(object sender, EventArgs e)
+        {
+            if (this.groupBoxextraoption.Visible && txtBoxCounter() == 1)
+            {
+                EmployeeBGN();
 
+            }
+            else
+            {
+
+                txtboxValidation.Text = "Missing Information";
+            }
+
+            if (this.groupBoxextraoption.Visible == false && txtBoxCounter() == 1)
+            {
+                EmployeeAGN();
+
+            }
+            else
+            {
+
+                txtboxValidation.Text = "Missing Information";
+            }
+
+
+
+
+        }
+
+        private void dtBirth_ValueChanged(object sender, EventArgs e)
+        {
+            dtBrth = this.dtBirth.Value;
+        }
+
+        private void dtHire_ValueChanged(object sender, EventArgs e)
+        {
+            dthire = this.dtHire.Value;
+        }
     }
-   
+
 }
